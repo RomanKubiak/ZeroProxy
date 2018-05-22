@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-c -Wall -std=c99 -I.
-LDFLAGS=-levent
-SOURCES=main.c utils.c udp_server.c http_server.c heartbeat_local_led.c cwpack.c
+LDFLAGS=-levent -lwiringPi
+SOURCES=main.c utils.c udp_server.c http_server.c heartbeat_local_led.c cwpack.c serial.c
 OBJECTS=$(SOURCES:.c=.o)
 EXECUTABLE=zero
 

@@ -1,5 +1,6 @@
 #include "config.h"
 
+
 in_port_t get_in_port(struct sockaddr *sa)
 {
     if (sa->sa_family == AF_INET) {

@@ -10,10 +10,15 @@
 #include <stdlib.h>
 #include <arpa/inet.h>
 #include <stdbool.h>
+#include <wiringPi.h>
+#include <stdio.h>
+#include <unistd.h>
 #include "ipc.h"
 
 
 #define CONFIG_FILE 		"./zero.json"
+#define CONFIG_SERIAL		"/dev/ttyACM0"
+#define CONFIG_SERIAL_SPEED		9600
 #define CONFIG_PORT		12345
 #define CONFIG_DEBUG	1
 
@@ -43,6 +48,7 @@ int udp_server_register(struct event_base *evbase);
 int http_server_register(struct event_base *evbase);
 int heartbeat_led_register(struct event_base *evbase);
 int utils_register(struct event_base *evbase);
+int serial_register(struct event_base *evbase);
 
 char *get_ip_str(const struct sockaddr *sa);
 in_port_t get_in_port(struct sockaddr *sa);
